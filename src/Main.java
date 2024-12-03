@@ -81,6 +81,29 @@ public class Main {
 					}
 					
 					
+				} else if(op == 3){
+					
+					System.out.println("\nFAZER DEPÓSITO");
+					System.out.print("Digite a conta: ");
+					num_conta = scan.nextInt();
+					
+					for (int i = 0; i <= contas_abertas.getContas().size(); i++) {
+						conta = contas_abertas.getContas().get(i);
+						
+						if(num_conta == conta.getNumero()) {
+							System.out.println(conta);
+							System.out.print("Digite o valor a ser depositado: ");
+							valor = scan.nextDouble();
+							
+							contas_abertas.FazerDeposito(num_conta, valor);
+							
+							System.out.println(contas_abertas.getContas().get(i));
+							System.out.println("Depósito realizado!");
+							
+							break;
+						}
+					}
+					
 				} else {
 					
 					for (int i = 0; i < contas_abertas.getContas().size(); i++) {

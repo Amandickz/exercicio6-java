@@ -49,7 +49,7 @@ public class Conta {
 
 	@Override
 	public String toString() {
-		return "\nConta número " + numero + "\nNome: " + nome + "\nSaldo: R$ " + saldo;
+		return "Conta número " + numero + ", Nome: " + nome + ", Saldo: R$ " + saldo;
 	}
 	
 	

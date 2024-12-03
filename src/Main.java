@@ -26,7 +26,7 @@ public class Main {
 			System.out.println(menu.toString());
 			op = scan.nextInt();
 			
-			if(op == 6) {
+			if(op == 7) {
 				exec++;
 			} else {
 				
@@ -52,6 +52,34 @@ public class Main {
 					}
 					
 					contas_abertas.Adicionar(conta);
+					
+				} else if(op == 2){
+					
+					System.out.println("\nALTERAÇÃO DE CONTA");
+					System.out.print("Digite o número da conta: ");
+					num_conta = scan.nextInt();
+					
+					for (int i = 0; i <= contas_abertas.getContas().size(); i++) {
+						conta = contas_abertas.getContas().get(i);
+						
+						if(num_conta == conta.getNumero()) {
+							System.out.println(conta.getNumero());
+							System.out.println(conta.getNome());
+							System.out.println(conta.getSaldo());
+							System.out.print("Deseja alterar o nome? ");
+							dep = scan.next().charAt(0);
+							
+							if (dep == 's') {
+								System.out.print("Digite o novo nome: ");
+								scan.nextLine();
+								nome_cliente = scan.nextLine();
+								contas_abertas.Alteracao(num_conta, nome_cliente);
+								
+								break;
+							}
+						}
+					}
+					
 					
 				} else {
 					

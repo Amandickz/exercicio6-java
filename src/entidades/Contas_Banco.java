@@ -31,5 +31,16 @@ public class Contas_Banco {
 			
 		}
 	}
+	
+	public void Alteracao(int num_conta, String nome) {
+		for(int i = 0; i <= contas.size(); i++) {
+			
+			if(num_conta == contas.get(i).getNumero()) {
+				contas.get(i).setNome(nome);
+				break;
+			}
+			
+		}
+	}
 
 }

@@ -53,5 +53,16 @@ public class Contas_Banco {
 			
 		}
 	}
+	
+	public void FazerSaque(int num_conta, double valor) {
+		for(int i = 0; i <= contas.size(); i++) {
+			
+			if(num_conta == contas.get(i).getNumero()) {
+				 contas.get(i).setSaldo(contas.get(i).getSaldo() - valor - 5);
+				break;
+			}
+			
+		}
+	}
 
 }

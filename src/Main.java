@@ -39,7 +39,7 @@ public class Main {
 					scan.nextLine();
 					nome_cliente = scan.nextLine();
 					
-					System.out.print("Deseja fazer um depósito inicial? (s/n)");
+					System.out.print("Deseja fazer um depósito inicial? (s/n) ");
 					dep = scan.next().charAt(0);
 					
 					if(dep == 's') {
@@ -104,7 +104,30 @@ public class Main {
 						}
 					}
 					
-				} else {
+				} else if(op == 4){
+					
+					System.out.println("\nFAZER SAQUE");
+					System.out.print("Digite a conta: ");
+					num_conta = scan.nextInt();
+					
+					for (int i = 0; i <= contas_abertas.getContas().size(); i++) {
+						conta = contas_abertas.getContas().get(i);
+						
+						if(num_conta == conta.getNumero()) {
+							System.out.println(conta);
+							System.out.print("Digite o valor a ser sacado: ");
+							valor = scan.nextDouble();
+							
+							contas_abertas.FazerSaque(num_conta, valor);
+							
+							System.out.println(contas_abertas.getContas().get(i));
+							System.out.println("Saque realizado!");
+							
+							break;
+						}
+					}
+					
+				}else {
 					
 					for (int i = 0; i < contas_abertas.getContas().size(); i++) {
 						System.out.println(contas_abertas.getContas().get(i));

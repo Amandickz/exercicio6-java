@@ -127,47 +127,28 @@ public class Main {
 						}
 					}
 					
-				}else {
+				} else if (op == 5){
 					
 					for (int i = 0; i < contas_abertas.getContas().size(); i++) {
 						System.out.println(contas_abertas.getContas().get(i));
 					}
 					
-				}
-				
-			}
-			
-			/*conta = new Conta(1, "Amanda");
-			contas.add(conta);
-			conta = new Conta(2, "Diego", 500);
-			contas.add(conta);
-			
-			for(int i = 0; i < contas.size(); i++) {
-				System.out.println(contas.get(i).toString());
-			}
-			
-			System.out.println("Qual Conta deseja alterar?");
-			int num = scan.nextInt();
-			
-			for(int i = 0; i < contas.size() + 1; i++) {
-				
-				if(num == contas.get(i).getNumero()) {
+				} else {
 					
-					System.out.println("Digite o novo nome: ");
-					scan.nextLine();
-					nome_cliente = scan.nextLine();
+					System.out.println("\nFECHAR CONTA");
+					System.out.print("Digite a conta: ");
+					num_conta = scan.nextInt();
 					
-					contas.get(i).setNome(nome_cliente);
-					
-					break;
+					for (int i = 0; i <= contas_abertas.getContas().size(); i++) {
+						contas_abertas.Remover(num_conta);
+						System.out.println("CONTA FECHADA!");
+						break;
+						
+					}
 					
 				}
 				
 			}
-			
-			for(int i = 0; i < contas.size(); i++) {
-				System.out.println(contas.get(i).toString());
-			}*/
 			
 		}while(exec == 0);
 		
